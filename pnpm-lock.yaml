@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@headlessui/react': ^1.7.7
   '@reduxjs/toolkit': ^1.9.1
   '@types/jest': ^29.2.4
   '@types/react': ^18.0.26
@@ -25,6 +26,7 @@ specifiers:
   web-vitals: ^3.1.0
 
 dependencies:
+  '@headlessui/react': 1.7.7_biqbaboplfbrettd7655fr4n2y
   '@reduxjs/toolkit': 1.9.1_k4ae6lp43ej6mezo3ztvx6pykq
   '@types/react-redux': 7.1.24
   add: 2.0.6
@@ -484,6 +486,18 @@ packages:
     dev: true
     optional: true
 
+  /@headlessui/react/1.7.7_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-BqDOd/tB9u2tA0T3Z0fn18ktw+KbVwMnkxxsGPIH2hzssrQhKB5n/6StZOyvLYP/FsYtvuXfi9I0YowKPv2c1w==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      client-only: 0.0.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /@jest/expect-utils/29.3.1:
     resolution: {integrity: sha512-wlrznINZI5sMjwvUoLVk617ll/UYfGIZNxmbU+Pa7wmkL4vYzhV9R2pwVqUh4NWWuLQWkI8+8mOkxs//prKQ3g==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -830,6 +844,10 @@ packages:
     resolution: {integrity: sha512-2CpRNYmImPx+RXKLq6jko/L07phmS9I02TyqkcNU20GCF/GgaWvc58hPtjxDX8lPpkdwc9sNh72V9k00S7ezog==}
     engines: {node: '>=8'}
     dev: true
+
+  /client-only/0.0.1:
+    resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
+    dev: false
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
