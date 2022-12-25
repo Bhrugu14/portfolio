@@ -7,14 +7,12 @@ function classNames(...classes: any[]) {
 }
 
 export const Header = () => {
-    const [enabled, setEnabled] = useState(
-        localStorage.theme === 'dark' ||
-            (!('theme' in localStorage) &&
-                window.matchMedia('(prefers-color-scheme: dark)').matches)
-    )
+    const [enabled, setEnabled] = useState(false)
 
     useEffect(() => {
         document.documentElement.classList.toggle('dark')
+        const d = document.documentElement.classList.value
+        localStorage.theme = d
     }, [enabled])
 
     return (
@@ -24,11 +22,6 @@ export const Header = () => {
                     <div className="flex justify-start lg:w-0 lg:flex-1">
                         <a href="#">
                             <span className="sr-only">Your Company</span>
-                            <img
-                                className="h-8 w-auto sm:h-10"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                alt=""
-                            />
                         </a>
                     </div>
                     <a

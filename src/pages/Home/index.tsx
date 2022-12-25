@@ -1,45 +1,53 @@
+import { Transition } from '@headlessui/react'
 import { useState } from 'react'
 import reactLogo from '../../assets/react.svg'
 import { Text } from '../../components'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
+import { useInView } from 'react-intersection-observer'
 import { increment } from '../../store/user'
 
 const Home = () => {
-    //   const [count, setCount] = useState(0);
+    const { ref, inView } = useInView({
+        threshold: 0,
+        triggerOnce: true,
+    })
 
     const count = useAppSelector((state) => state.counter.value)
     const dispatch = useAppDispatch()
 
     return (
-        <div className="flex h-screen flex-1">
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src="/vite.svg" className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://reactjs.org" target="_blank">
-                    <img
-                        src={reactLogo}
-                        className="logo react"
-                        alt="React logo"
-                    />
-                </a>
-            </div>
+        <div className="flex h-screen w-full flex-1 flex-col flex-col">
             <Text>Home</Text>
-            <div className="card">
-                <button
-                    onClick={() =>
-                        document.documentElement.classList.toggle('dark')
-                    }
-                >
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
+            <div className="flex flex-col">
+                {/* Insert Your Item ! */}
+                <Transition show={inView} appear={true}>
+                    {/* <div className="grid grid-cols-1 gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2"> */}
+                    {[...Array(20)].map((i, k) => {
+                        return (
+                            <Transition.Child
+                                enter="duration-1000 delay-100"
+                                enterFrom="translate-y-32 opacity-0"
+                                enterTo="translate-y-0 opacity-100"
+                                leave="transition-opacity duration-150"
+                                leaveFrom="translate-y-0 opacity-100"
+                                leaveTo="translate-y-0 opacity-100"
+                            >
+                                <div
+                                    style={{
+                                        backgroundColor: 'red',
+                                        height: '100px',
+                                        margin: '10px',
+                                    }}
+                                >
+                                    {k}
+                                </div>
+                            </Transition.Child>
+                        )
+                    })}
+                    {/* </div> */}
+                </Transition>
             </div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
+            <div ref={ref} />
         </div>
     )
 }
