@@ -15,6 +15,7 @@ specifiers:
   prettier-plugin-tailwindcss: ^0.2.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-intersection-observer: ^9.4.1
   react-redux: ^8.0.5
   react-router-dom: ^6.6.0
   redux: ^4.2.0
@@ -32,6 +33,7 @@ dependencies:
   add: 2.0.6
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-intersection-observer: 9.4.1_react@18.2.0
   react-redux: 8.0.5_6fpxtwwxc52cyvwzdgczt4jvpq
   react-router-dom: 6.6.0_biqbaboplfbrettd7655fr4n2y
   redux: 4.2.0
@@ -1374,6 +1376,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-intersection-observer/9.4.1_react@18.2.0:
+    resolution: {integrity: sha512-IXpIsPe6BleFOEHKzKh5UjwRUaz/JYS0lT/HPsupWEQou2hDqjhLMStc5zyE3eQVT4Fk3FufM8Fw33qW1uyeiw==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:
