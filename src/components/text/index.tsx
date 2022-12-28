@@ -2,12 +2,12 @@ import React from 'react'
 
 interface TextProps {
     children: any
-    css?: string
+    className?: string
 }
 
-export const Text = ({ children, css }: TextProps) => {
+export const Text = ({ children, className }: TextProps) => {
     return (
-        <label className={`text-slate-800 dark:text-slate-50 ${css}`}>
+        <label className={`text-slate-800 dark:text-slate-50 ${className}`}>
             {children}
         </label>
     )

@@ -23,6 +23,11 @@ body {
     min-height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-    scrollbar-gutter: stable;
+    /* scrollbar-gutter: stable; */
     transition: all;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
