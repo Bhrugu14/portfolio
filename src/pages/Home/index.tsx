@@ -16,7 +16,7 @@ const Home = () => {
     const dispatch = useAppDispatch()
 
     return (
-        <div className="flex h-screen w-full flex-1 flex-col">
+        <div className="flex h-full w-full flex-1 flex-col">
             <div className="flex flex-col">
                 {/* Insert Your Item ! */}
                 <Transition show={inView} appear={true}>
@@ -31,7 +31,7 @@ const Home = () => {
                         <div
                             style={{
                                 backgroundColor: 'red',
-                                height: '100vh',
+                                height: '100%',
                                 margin: '10px',
                             }}
                         >
