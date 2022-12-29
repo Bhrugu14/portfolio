@@ -4,11 +4,11 @@ import { Header } from '../components'
 
 const MainContainer = () => {
     return (
-        <div className="h- flex h-screen w-screen flex-col overflow-auto bg-white dark:bg-black">
-            <div className="fixed z-10 h-24 w-screen">
+        <div className="h- flex h-screen w-screen flex-col overflow-auto overflow-x-hidden bg-white dark:bg-black">
+            <div className="fixed z-10 h-[4rem] w-screen">
                 <Header />
             </div>
-            <div className="h-[calc(100vh-h-24)] pt-24">
+            <div className="bg-red h-screen w-screen pt-[4rem]">
                 <Outlet />
             </div>
         </div>
