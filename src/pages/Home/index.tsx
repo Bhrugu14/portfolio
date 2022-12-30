@@ -31,6 +31,7 @@ const Home = () => {
 
     return (
         <div id="home" className="flex h-full w-full flex-1 flex-col">
+            <div ref={ref} />
             <div className="flex h-full w-full">
                 {/* Insert Your Item ! */}
                 <Transition
@@ -157,7 +158,6 @@ const Home = () => {
                     </div>
                 </Transition>
             </div>
-            <div ref={ref} />
         </div>
     )
 }
