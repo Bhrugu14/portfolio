@@ -23,7 +23,7 @@ export const Text = ({
             onMouseDown={onMouseDown}
             onMouseEnter={onMouseEnter}
             onMouseUp={onMouseUp}
-            className={`text-slate-800 dark:text-slate-50 ${className}`}
+            className={`font-poppins ${className}`}
         >
             {children}
         </label>

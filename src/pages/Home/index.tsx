@@ -1,4 +1,4 @@
-import { Transition } from '@headlessui/react'
+import { Popover, Transition } from '@headlessui/react'
 import { useState } from 'react'
 import reactLogo from '../../assets/react.svg'
 import { Text } from '../../components'
@@ -8,11 +8,15 @@ import { increment } from '../../store/user'
 import IcUserImage from '../../assets/man.png'
 
 const Home = () => {
-    const [onHoverReact, setHoverReact] = useState(false)
+    const [open, setOpen] = useState(false)
     const { ref, inView } = useInView({
         threshold: 0,
         triggerOnce: false,
     })
+    // const { ref, inView } = useInView({
+    //     threshold: 0,
+    //     triggerOnce: false,
+    // })
 
     const count = useAppSelector((state) => state.counter.value)
     const dispatch = useAppDispatch()
@@ -34,9 +38,9 @@ const Home = () => {
                     show={inView}
                     appear={true}
                 >
-                    <div className="flex h-full w-full ">
+                    <div className="grid h-full w-full grid-cols-1 md:grid-cols-2">
                         <Transition.Child
-                            className={'h-[calc(100vh-4rem)] w-1/2'}
+                            className={'h-[calc(100vh-4rem)]'}
                             enter="duration-500 delay-100"
                             enterFrom="translate-x-32 opacity-0"
                             enterTo="translate-x-0 opacity-100"
@@ -44,12 +48,12 @@ const Home = () => {
                             leaveFrom="translate-x-0 opacity-100"
                             leaveTo="translate-x-0 opacity-100"
                         >
-                            <div className="bg-blue flex h-full w-full flex-1 flex-col items-center justify-center bg-slate-900">
+                            <div className="flex h-full w-full flex-1 flex-col items-center justify-center px-4">
                                 <div className="flex flex-col">
-                                    <Text>
+                                    <Text className="text-orange-600">
                                         <Transition.Child
                                             className={
-                                                'text-6xl text-orange-600 hover:scale-105'
+                                                'text-6xl hover:scale-105'
                                             }
                                             enter="duration-500 delay-500"
                                             enterFrom="-translate-y-32 opacity-0"
@@ -61,7 +65,7 @@ const Home = () => {
                                             {'Bhrugu Tundeliya'}
                                         </Transition.Child>
                                     </Text>
-                                    <Text className="mt-2 hover:scale-105 hover:text-react-color">
+                                    <Text className="mt-2 text-slate-400 hover:scale-105 hover:text-react-color">
                                         <Transition.Child
                                             className={
                                                 'text-2xl hover:text-react-color'
@@ -76,7 +80,7 @@ const Home = () => {
                                             {`React Developer (${Experience()} years)`}
                                         </Transition.Child>
                                     </Text>
-                                    <Text className="hover:scale-105 hover:text-react-color  ">
+                                    <Text className="text-slate-400 hover:scale-105 hover:text-react-color  ">
                                         <Transition.Child
                                             className={
                                                 'text-2xl hover:text-react-color'
@@ -91,7 +95,7 @@ const Home = () => {
                                             {`React Native Developer (${Experience()} years)`}
                                         </Transition.Child>
                                     </Text>
-                                    <Text className="mt-1">
+                                    <Text className="mt-1 text-slate-400">
                                         <Transition.Child
                                             className={'text-base'}
                                             enter="duration-500 delay-500"
@@ -109,7 +113,7 @@ const Home = () => {
                             </div>
                         </Transition.Child>
                         <Transition.Child
-                            className={'h-[calc(100vh-4rem)] w-1/2'}
+                            className={'h-[calc(100vh-4rem)]'}
                             enter="duration-500 delay-100"
                             enterFrom="-translate-x-32 opacity-0"
                             enterTo="-translate-x-0 opacity-100"
@@ -117,7 +121,7 @@ const Home = () => {
                             leaveFrom="translate-y-0 opacity-100"
                             leaveTo="translate-y-0 opacity-100"
                         >
-                            <div className="bg-blue flex h-full w-full flex-1 flex-col items-center justify-center bg-slate-900">
+                            <div className="relative flex h-full w-full flex-1 flex-col items-center justify-center">
                                 <Transition.Child
                                     className={
                                         'flex h-full w-full items-center justify-center'
@@ -129,7 +133,24 @@ const Home = () => {
                                     leaveFrom="translate-y-0 opacity-100"
                                     leaveTo="translate-y-0 opacity-100"
                                 >
-                                    <img src={IcUserImage} />
+                                    <img
+                                        className="hover:opacity-20"
+                                        onMouseEnter={() => setOpen(true)}
+                                        onMouseLeave={() => setOpen(false)}
+                                        src={IcUserImage}
+                                        alt=""
+                                    />
+                                    {open && (
+                                        <div className="pointer-events-none absolute w-1/2">
+                                            <label className="text-xl text-slate-400">
+                                                {'Hello,'}
+                                                <br />
+                                                {
+                                                    'I am a frontend developer (for now 😉). in my experience, I have been part of teams, done some solo work, built websites from scratch, fixed bugs in existing code, and been part of the deployment process.'
+                                                }
+                                            </label>
+                                        </div>
+                                    )}
                                 </Transition.Child>
                             </div>
                         </Transition.Child>
