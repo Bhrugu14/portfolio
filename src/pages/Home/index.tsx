@@ -6,7 +6,6 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { useInView } from 'react-intersection-observer'
 import { increment } from '../../store/user'
 import IcUserImage from '../../assets/man.png'
-import AnimatedText from 'react-animated-text-content'
 
 const Home = () => {
     const [onHoverReact, setHoverReact] = useState(false)
@@ -47,90 +46,66 @@ const Home = () => {
                         >
                             <div className="bg-blue flex h-full w-full flex-1 flex-col items-center justify-center bg-slate-900">
                                 <div className="flex flex-col">
-                                    <Text className="text-6xl text-orange-600 hover:scale-105">
-                                        {/* <AnimatedText
-                                            type="words" // animate words or chars
-                                            animation={{
-                                                x: '200px',
-                                                y: '-20px',
-                                                scale: 1.1,
-                                                ease: 'ease-in-out',
-                                            }}
-                                            animationType="float"
-                                            interval={0.06}
-                                            duration={2}
-                                            tag="p"
-                                            className="animated-paragraph text-orange-600"
-                                            includeWhiteSpaces
-                                            threshold={0.1}
-                                            rootMargin="20%"
+                                    <Text>
+                                        <Transition.Child
+                                            className={
+                                                'text-6xl text-orange-600 hover:scale-105'
+                                            }
+                                            enter="duration-500 delay-500"
+                                            enterFrom="-translate-y-32 opacity-0"
+                                            enterTo="-translate-y-0 opacity-100"
+                                            leave="transition-opacity duration-150"
+                                            leaveFrom="translate-x-0 opacity-100"
+                                            leaveTo="translate-x-0 opacity-100"
                                         >
                                             {'Bhrugu Tundeliya'}
-                                        </AnimatedText> */}
+                                        </Transition.Child>
                                     </Text>
-                                    <Text className="mt-2 text-2xl hover:scale-105 hover:text-orange-700">
-                                        {/* <AnimatedText
-                                            type="words" // animate words or chars
-                                            animation={{
-                                                x: '200px',
-                                                y: '-20px',
-                                                scale: 1.1,
-                                                ease: 'ease-in-out',
-                                            }}
-                                            animationType="float"
-                                            interval={0.06}
-                                            duration={2.5}
-                                            tag="label"
-                                            className="animated-paragraph"
-                                            includeWhiteSpaces
-                                            threshold={0.1}
-                                            rootMargin="20%"
+                                    <Text className="mt-2">
+                                        <Transition.Child
+                                            className={
+                                                ' text-2xl hover:scale-105 hover:text-orange-700'
+                                            }
+                                            enter="duration-500 delay-500"
+                                            enterFrom="-translate-x-32 opacity-0"
+                                            enterTo="-translate-x-0 opacity-100"
+                                            leave="transition-opacity duration-150"
+                                            leaveFrom="translate-x-0 opacity-100"
+                                            leaveTo="translate-x-0 opacity-100"
                                         >
                                             {`React Developer (${Experience()} years)`}
-                                        </AnimatedText> */}
+                                        </Transition.Child>
                                     </Text>
-                                    <Text className="text-2xl hover:scale-105">
-                                        {/* <AnimatedText
-                                            type="words" // animate words or chars
-                                            animation={{
-                                                x: '200px',
-                                                y: '-20px',
-                                                scale: 1.1,
-                                                ease: 'ease-in-out',
-                                            }}
-                                            animationType="float"
-                                            interval={0.06}
-                                            duration={2.5}
-                                            tag="label"
-                                            className="animated-paragraph"
-                                            includeWhiteSpaces
-                                            threshold={0.1}
-                                            rootMargin="20%"
+                                    <Text className="">
+                                        <Transition.Child
+                                            className={
+                                                'text-2xl hover:scale-105'
+                                            }
+                                            enter="duration-500 delay-500"
+                                            enterFrom="translate-x-32 opacity-0"
+                                            enterTo="translate-x-0 opacity-100"
+                                            leave="transition-opacity duration-150"
+                                            leaveFrom="translate-x-0 opacity-100"
+                                            leaveTo="translate-x-0 opacity-100"
                                         >
                                             {`React Native Developer (${Experience()} years)`}
-                                        </AnimatedText> */}
+                                        </Transition.Child>
                                     </Text>
-                                    <Text className="text-base">
-                                        {/* <AnimatedText
-                                            type="words" // animate words or chars
-                                            animation={{
-                                                x: '200px',
-                                                y: '-20px',
-                                                scale: 1.1,
-                                                ease: 'ease-in-out',
-                                            }}
-                                            animationType="float"
-                                            interval={0.06}
-                                            duration={2.5}
-                                            tag="label"
-                                            className="animated-paragraph text-slate-500"
-                                            includeWhiteSpaces
-                                            threshold={0.1}
-                                            rootMargin="20%"
+                                    <Text className="mt-1">
+                                        <Transition.Child
+                                            className={
+                                                'text-base hover:scale-105'
+                                            }
+                                            enter="duration-500 delay-500"
+                                            enterFrom="translate-y-32 opacity-0"
+                                            enterTo="translate-y-0 opacity-100"
+                                            leave="transition-opacity duration-150"
+                                            leaveFrom="translate-x-0 opacity-100"
+                                            leaveTo="translate-x-0 opacity-100"
                                         >
                                             experience in various type of
                                             applications and websites
-                                        </AnimatedText> */}
+                                        </Transition.Child>
                                     </Text>
                                 </div>
                             </div>
