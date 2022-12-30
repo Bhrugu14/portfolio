@@ -56,7 +56,7 @@ const Home = () => {
                                             threshold={0.1}
                                             rootMargin="20%"
                                         >
-                                            Bhrugu Tundeliya
+                                            {'Bhrugu Tundeliya'}
                                         </AnimatedText>
                                     </Text>
                                     <Text className="mt-2 text-2xl  ">
