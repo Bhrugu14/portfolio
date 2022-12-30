@@ -19,7 +19,7 @@ export const Header = () => {
                     Portfolio.. or something
                 </Text>
             </div>
-            <div className="flex w-1/4 justify-evenly">
+            <div className="hidden w-1/4 justify-evenly md:flex">
                 <a href="#home" className="cursor-pointer">
                     <Text
                         className={`cursor-pointer to-emerald-900 stroke-cyan-500 stroke-1 text-lg font-semibold ${

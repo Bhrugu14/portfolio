@@ -15,11 +15,11 @@ function Skills() {
         >
             <div className="">
                 <Text className="px-5 text-2xl  text-slate-200">Skills</Text>
-                <div className="grid h-20 grid-cols-12 gap-0.5 px-5 py-2">
+                <div className="grid h-20 grid-cols-3 px-5 py-2 md:grid-cols-8 lg:grid-cols-12">
                     {skillsData.map((i, k) => (
                         <div
                             key={k}
-                            className="relative flex h-20 w-36 cursor-pointer flex-col items-center justify-center hover:animate-pulse"
+                            className="relative mb-4 flex h-20 w-36 cursor-pointer flex-col items-center justify-center hover:animate-pulse"
                         >
                             <img
                                 src={i.icon}

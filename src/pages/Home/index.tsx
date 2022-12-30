@@ -52,7 +52,7 @@ const Home = () => {
                                     <Text className="text-orange-600">
                                         <Transition.Child
                                             className={
-                                                'text-6xl hover:scale-105'
+                                                'text-3xl hover:scale-105'
                                             }
                                             enter="duration-500 delay-500"
                                             enterFrom="-translate-y-32 opacity-0"
@@ -123,7 +123,7 @@ const Home = () => {
                             <div className="relative flex h-full w-full flex-1 flex-col items-center justify-center">
                                 <Transition.Child
                                     className={
-                                        'flex h-full w-full items-center justify-center'
+                                        'flex h-1/2 w-full items-center justify-center md:h-full lg:h-full'
                                     }
                                     enter="duration-1000 delay-100"
                                     enterFrom="translate-x-0 scale-0"
@@ -133,7 +133,7 @@ const Home = () => {
                                     leaveTo="translate-y-0 opacity-100"
                                 >
                                     <img
-                                        className="animate-wiggle hover:animate-none hover:opacity-20"
+                                        className="object-contain hover:animate-none hover:opacity-20 sm:h-1/2"
                                         onMouseEnter={() => setOpen(true)}
                                         onMouseLeave={() => setOpen(false)}
                                         src={IcUserImage}
