@@ -38,9 +38,9 @@ const Home = () => {
                     show={inView}
                     appear={true}
                 >
-                    <div className="grid h-full w-full grid-cols-1 md:grid-cols-2">
+                    <div className="grid h-full w-full sm:grid-cols-1 md:grid-cols-2">
                         <Transition.Child
-                            className={'h-[calc(100vh-4rem)]'}
+                            className={'col-span-1  md:h-[calc(100vh-4rem)]'}
                             enter="duration-500 delay-100"
                             enterFrom="translate-x-32 opacity-0"
                             enterTo="translate-x-0 opacity-100"
@@ -113,7 +113,7 @@ const Home = () => {
                             </div>
                         </Transition.Child>
                         <Transition.Child
-                            className={'h-[calc(100vh-4rem)]'}
+                            className={'md:h-[calc(100vh-4rem)]'}
                             enter="duration-500 delay-100"
                             enterFrom="-translate-x-32 opacity-0"
                             enterTo="-translate-x-0 opacity-100"
@@ -141,7 +141,7 @@ const Home = () => {
                                         alt=""
                                     />
                                     {open && (
-                                        <div className="pointer-events-none absolute w-1/2">
+                                        <div className="pointer-events-none absolute w-3/4 md:w-1/2">
                                             <label className="text-xl text-slate-400">
                                                 {'Hello,'}
                                                 <br />
