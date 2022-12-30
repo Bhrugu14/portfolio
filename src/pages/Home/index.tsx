@@ -61,10 +61,10 @@ const Home = () => {
                                             {'Bhrugu Tundeliya'}
                                         </Transition.Child>
                                     </Text>
-                                    <Text className="mt-2">
+                                    <Text className="mt-2 hover:scale-105 hover:text-react-color">
                                         <Transition.Child
                                             className={
-                                                ' text-2xl hover:scale-105 hover:text-orange-700'
+                                                'text-2xl hover:text-react-color'
                                             }
                                             enter="duration-500 delay-500"
                                             enterFrom="-translate-x-32 opacity-0"
@@ -76,10 +76,10 @@ const Home = () => {
                                             {`React Developer (${Experience()} years)`}
                                         </Transition.Child>
                                     </Text>
-                                    <Text className="">
+                                    <Text className="hover:scale-105 hover:text-react-color  ">
                                         <Transition.Child
                                             className={
-                                                'text-2xl hover:scale-105'
+                                                'text-2xl hover:text-react-color'
                                             }
                                             enter="duration-500 delay-500"
                                             enterFrom="translate-x-32 opacity-0"
@@ -93,9 +93,7 @@ const Home = () => {
                                     </Text>
                                     <Text className="mt-1">
                                         <Transition.Child
-                                            className={
-                                                'text-base hover:scale-105'
-                                            }
+                                            className={'text-base'}
                                             enter="duration-500 delay-500"
                                             enterFrom="translate-y-32 opacity-0"
                                             enterTo="translate-y-0 opacity-100"

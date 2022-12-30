@@ -10,7 +10,7 @@ const MainContainer = () => {
             <div className="fixed z-10 h-[4rem] w-screen">
                 <Header />
             </div>
-            <div className="bg-red mt-[4rem] h-[calc(100vh-4rem)] w-screen overflow-x-hidden scroll-smooth">
+            <div className="bg-red scroll custom_scroll_bar mt-[4rem] h-[calc(100vh-4rem)] w-screen overflow-x-hidden scroll-smooth">
                 <Home />
                 <Projects />
             </div>

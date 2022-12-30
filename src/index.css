@@ -36,3 +36,11 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
+
+.custom_scroll_bar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.custom_scroll_bar::-webkit-scrollbar {
+    display: none;
+}
