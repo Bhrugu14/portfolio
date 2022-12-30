@@ -11,12 +11,10 @@ const Home = () => {
     const [open, setOpen] = useState(false)
     const { ref, inView } = useInView({
         threshold: 0,
-        triggerOnce: false,
+        triggerOnce: true,
+        // fallbackInView: true,
     })
-    // const { ref, inView } = useInView({
-    //     threshold: 0,
-    //     triggerOnce: false,
-    // })
+    console.log(ref, inView, 'ref, inView ')
 
     const count = useAppSelector((state) => state.counter.value)
     const dispatch = useAppDispatch()
@@ -31,8 +29,8 @@ const Home = () => {
 
     return (
         <div id="home" className="flex h-full w-full flex-1 flex-col">
-            <div ref={ref} />
             <div className="flex h-full w-full">
+                <div ref={ref} />
                 {/* Insert Your Item ! */}
                 <Transition
                     className={'h-full w-full'}
@@ -41,7 +39,7 @@ const Home = () => {
                 >
                     <div className="grid h-full w-full sm:grid-cols-1 md:grid-cols-2">
                         <Transition.Child
-                            className={'col-span-1  md:h-[calc(100vh-4rem)]'}
+                            className={'col-span-1 md:h-[calc(100vh-4rem)]'}
                             enter="duration-500 delay-100"
                             enterFrom="translate-x-32 opacity-0"
                             enterTo="translate-x-0 opacity-100"
@@ -60,8 +58,8 @@ const Home = () => {
                                             enterFrom="-translate-y-32 opacity-0"
                                             enterTo="-translate-y-0 opacity-100"
                                             leave="transition-opacity duration-150"
-                                            leaveFrom="translate-x-0 opacity-100"
-                                            leaveTo="translate-x-0 opacity-100"
+                                            leaveFrom="-translate-y-0 opacity-100"
+                                            leaveTo="-translate-y-0 opacity-100"
                                         >
                                             {'Bhrugu Tundeliya'}
                                         </Transition.Child>
@@ -75,8 +73,8 @@ const Home = () => {
                                             enterFrom="-translate-x-32 opacity-0"
                                             enterTo="-translate-x-0 opacity-100"
                                             leave="transition-opacity duration-150"
-                                            leaveFrom="translate-x-0 opacity-100"
-                                            leaveTo="translate-x-0 opacity-100"
+                                            leaveFrom="-translate-x-0 opacity-100"
+                                            leaveTo="-translate-x-0 opacity-100"
                                         >
                                             {`React Developer (${Experience()} years)`}
                                         </Transition.Child>
@@ -103,8 +101,8 @@ const Home = () => {
                                             enterFrom="translate-y-32 opacity-0"
                                             enterTo="translate-y-0 opacity-100"
                                             leave="transition-opacity duration-150"
-                                            leaveFrom="translate-x-0 opacity-100"
-                                            leaveTo="translate-x-0 opacity-100"
+                                            leaveFrom="translate-y-0 opacity-100"
+                                            leaveTo="translate-y-0 opacity-100"
                                         >
                                             experience in various type of
                                             applications and websites
@@ -135,7 +133,7 @@ const Home = () => {
                                     leaveTo="translate-y-0 opacity-100"
                                 >
                                     <img
-                                        className="hover:opacity-20"
+                                        className="animate-wiggle hover:animate-none hover:opacity-20"
                                         onMouseEnter={() => setOpen(true)}
                                         onMouseLeave={() => setOpen(false)}
                                         src={IcUserImage}

@@ -19,7 +19,7 @@ function Skills() {
                     {skillsData.map((i, k) => (
                         <div
                             key={k}
-                            className="relative flex h-20 w-36 cursor-pointer flex-col items-center justify-center"
+                            className="relative flex h-20 w-36 cursor-pointer flex-col items-center justify-center hover:animate-pulse"
                         >
                             <img
                                 src={i.icon}
