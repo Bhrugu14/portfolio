@@ -4,7 +4,7 @@ import reactLogo from '../../assets/react.svg'
 import { Text } from '../../components'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { useInView } from 'react-intersection-observer'
-import { increment } from '../../store/user'
+import { TypeAnimation } from 'react-type-animation'
 import IcUserImage from '../../assets/man.png'
 
 const Home = () => {
@@ -52,7 +52,7 @@ const Home = () => {
                                     <Text className="text-orange-600">
                                         <Transition.Child
                                             className={
-                                                'text-3xl hover:scale-105'
+                                                'text-3xl hover:scale-105 md:text-6xl'
                                             }
                                             enter="duration-500 delay-500"
                                             enterFrom="-translate-y-32 opacity-0"
@@ -140,15 +140,21 @@ const Home = () => {
                                         alt=""
                                     />
                                     {open && (
-                                        <div className="pointer-events-none absolute w-3/4 md:w-1/2">
-                                            <label className="text-xl text-slate-400">
-                                                {'Hello,'}
-                                                <br />
-                                                {
-                                                    'I am a frontend developer (for now 😉). in my experience, I have been part of teams, done some solo work, built websites from scratch, fixed bugs in existing code, and been part of the deployment process.'
-                                                }
-                                            </label>
-                                        </div>
+                                        // <div className="pointer-events-none absolute w-3/4 md:w-1/2">
+                                        //     <label className="text-xl text-slate-400">
+                                        <TypeAnimation
+                                            className="pointer-events-none absolute w-3/4 text-xl text-slate-400 md:w-1/2"
+                                            sequence={[
+                                                'Hello, I am a frontend developer (for now 😉). in my experience, I have been part of teams, done some solo work, built websites from scratch, fixed bugs in existing code, and been part of the deployment process.',
+                                                1000,
+                                                '',
+                                            ]}
+                                            omitDeletionAnimation
+                                            speed={75}
+                                            wrapper="h2"
+                                            repeat={1}
+                                        />
+                                        // </div>
                                     )}
                                 </Transition.Child>
                             </div>

@@ -20,7 +20,7 @@ export const Header = () => {
                     Portfolio.. or something
                 </Text>
             </div>
-            <div className="flex w-1/4 justify-evenly md:hidden">
+            <div className="flex  justify-evenly md:hidden">
                 <MobileMenu />
             </div>
             <div className="hidden w-1/4 justify-evenly md:flex">
@@ -48,7 +48,7 @@ export const Header = () => {
                             hash === '#projects' && SelectedStyle
                         }`}
                     >
-                        Projects
+                        Experience
                     </Text>
                 </a>
                 <Text className="cursor-pointer to-emerald-900 text-lg font-semibold">

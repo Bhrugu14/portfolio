@@ -1,5 +1,4 @@
 import { Popover, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Fragment, SVGProps } from 'react'
 import { Text } from '../text'
 
@@ -60,7 +59,7 @@ export function MobileMenu() {
                                                 className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-orange-300 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                                             >
                                                 <div className="">
-                                                    <Text className="text-sm text-2xl font-medium font-bold text-white hover:text-orange-700">
+                                                    <Text className="text-sm text-xl font-medium font-bold text-white hover:text-orange-700">
                                                         {item.name}
                                                     </Text>
                                                 </div>
