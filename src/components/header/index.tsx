@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { Text } from '../text'
 import { useLocation } from 'react-router-dom'
+import { MobileMenu } from '../dropdown'
 
 export const Header = () => {
     const { hash } = useLocation()
@@ -18,6 +19,9 @@ export const Header = () => {
                 >
                     Portfolio.. or something
                 </Text>
+            </div>
+            <div className="flex w-1/4 justify-evenly md:hidden">
+                <MobileMenu />
             </div>
             <div className="hidden w-1/4 justify-evenly md:flex">
                 <a href="#home" className="cursor-pointer">
