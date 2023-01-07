@@ -1,12 +1,18 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { Text } from '../text'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { MobileMenu } from '../dropdown'
 
 export const Header = () => {
-    const { hash } = useLocation()
-    console.log({ hash })
+    const { hash, pathname } = useLocation()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (hash) {
+            window.location.href = `/${hash}`
+        }
+    }, [])
 
     const SelectedStyle =
         'text-xl underline decoration-2 text-orange-700 underline-offset-5'
@@ -24,16 +30,16 @@ export const Header = () => {
                 <MobileMenu />
             </div>
             <div className="hidden w-1/4 justify-evenly md:flex">
-                <a href="#home" className="cursor-pointer">
+                <a href="/#home" className="cursor-pointer">
                     <Text
                         className={`cursor-pointer to-emerald-900 stroke-cyan-500 stroke-1 text-lg font-semibold ${
-                            (hash === '' || hash === '#home') && SelectedStyle
+                            hash === '#home' && SelectedStyle
                         }`}
                     >
                         Home
                     </Text>
                 </a>
-                <a href="#skills" className="cursor-pointer">
+                <a href="/#skills" className="cursor-pointer">
                     <Text
                         className={`cursor-pointer to-emerald-900 text-lg font-semibold ${
                             hash === '#skills' && SelectedStyle
@@ -42,7 +48,7 @@ export const Header = () => {
                         Skills
                     </Text>
                 </a>
-                <a href="#projects" className="cursor-pointer">
+                <a href="/#projects" className="cursor-pointer">
                     <Text
                         className={`cursor-pointer to-emerald-900 text-lg font-semibold ${
                             hash === '#projects' && SelectedStyle
@@ -51,9 +57,18 @@ export const Header = () => {
                         Experience
                     </Text>
                 </a>
-                <Text className="cursor-pointer to-emerald-900 text-lg font-semibold">
-                    Home
-                </Text>
+                <a
+                    onClick={() => navigate('/contact')}
+                    className="cursor-pointer"
+                >
+                    <Text
+                        className={`cursor-pointer to-emerald-900 text-lg font-semibold ${
+                            pathname.includes('/contact') && SelectedStyle
+                        }`}
+                    >
+                        Contact
+                    </Text>
+                </a>
             </div>
         </div>
     )

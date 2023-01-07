@@ -15,6 +15,7 @@ const data = [
             'Integrated Promo-code based payment',
             'Integrated RazorPay for payment facilitation',
         ],
+        isOpen: false,
     },
     {
         id: 1,
@@ -27,6 +28,7 @@ const data = [
             'developed a mobile-ready website with responsive UI.',
             'Integrated MirrAr web plug-in to view products on the go.',
         ],
+        isOpen: false,
     },
     {
         id: 1,
@@ -38,6 +40,7 @@ const data = [
             'integrated different payment method handles gift card and personal message',
             'Responsible for bug fixes and adding new modules in the web',
         ],
+        isOpen: false,
     },
     {
         id: 1,
@@ -49,6 +52,7 @@ const data = [
             'Send and receive response of connected device',
             'Handled multiple events with log',
         ],
+        isOpen: false,
     },
     {
         id: 1,
@@ -61,6 +65,7 @@ const data = [
             'Used Global context for all file and folder',
             'Share with other user and share link integrated',
         ],
+        isOpen: false,
     },
     {
         id: 1,
@@ -74,6 +79,7 @@ const data = [
             'Migration from MobX to Redux',
             'The users of the system are end customers and vendors',
         ],
+        isOpen: false,
     },
     {
         id: 1,
@@ -85,6 +91,7 @@ const data = [
             'Meta Tags for each Products',
             'Handled Dynamic Categories and SubCategories',
         ],
+        isOpen: false,
     },
 ]
 

@@ -1,7 +1,7 @@
-import Home from "../pages/Home";
+import MainThread from '../container/mainStack'
 
 const homePaths = {
-  path: "/",
-  element: <Home />,
-};
-export default homePaths;
+    path: '/',
+    element: <MainThread />,
+}
+export default homePaths

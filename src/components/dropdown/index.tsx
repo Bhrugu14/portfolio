@@ -55,7 +55,7 @@ export function MobileMenu() {
                                         {solutions.map((item) => (
                                             <a
                                                 key={item.name}
-                                                href={item.href}
+                                                href={'/' + item.href}
                                                 className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-orange-300 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                                             >
                                                 <div className="">
