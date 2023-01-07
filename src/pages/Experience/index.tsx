@@ -130,13 +130,13 @@ function Experience() {
                                         setCount(count + 1)
                                     }}
                                 >
-                                    <Text className="cursor-pointer text-xl font-black text-white no-underline decoration-1 antialiased">
+                                    <Text className="cursor-pointer text-center text-xl font-black text-white no-underline decoration-1 antialiased">
                                         {i.name}
                                     </Text>
                                     <div className="text-base italic text-gray-200">
                                         {i.skills.map((j, l, arr) => (
                                             <Text
-                                                className=" cursor-pointer"
+                                                className=" cursor-pointer text-center"
                                                 key={l + 'skills'}
                                             >
                                                 {j}
@@ -161,7 +161,7 @@ function Experience() {
                                     <ul className="list-outside list-disc">
                                         {i.points.map((j, l, arr) => (
                                             <li key={l + 'skills'}>
-                                                <Text className="cursor-pointer text-base italic text-gray-200 ">
+                                                <Text className="cursor-pointer text-center text-base italic text-gray-200">
                                                     {j}
                                                 </Text>
                                             </li>

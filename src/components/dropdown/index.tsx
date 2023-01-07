@@ -18,6 +18,11 @@ const solutions = [
         description: 'Keep track of your growth',
         href: '#projects',
     },
+    {
+        name: 'Contact',
+        description: 'Keep track of your growth',
+        href: 'contact',
+    },
 ]
 
 export function MobileMenu() {
