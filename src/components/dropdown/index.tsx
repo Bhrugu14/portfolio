@@ -22,7 +22,7 @@ const solutions = [
 
 export function MobileMenu() {
     return (
-        <div className="">
+        <div className="z-10">
             <Popover className="relative z-30">
                 {({ open }) => (
                     <>

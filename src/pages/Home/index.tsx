@@ -1,6 +1,5 @@
 import { Popover, Transition } from '@headlessui/react'
 import { useState } from 'react'
-import reactLogo from '../../assets/react.svg'
 import { Text } from '../../components'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { useInView } from 'react-intersection-observer'
@@ -14,7 +13,6 @@ const Home = () => {
         triggerOnce: true,
         // fallbackInView: true,
     })
-    console.log(ref, inView, 'ref, inView ')
 
     const count = useAppSelector((state) => state.counter.value)
     const dispatch = useAppDispatch()

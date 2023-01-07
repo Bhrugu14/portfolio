@@ -1,14 +1,18 @@
 import React from 'react'
 import { Text } from '../text'
 
-interface skillCardProps {
-    data: object[]
+interface itemType {
+    icon: string
+    name: string
 }
 
-export const SkillCard = ({ data }: skillCardProps) => {
+interface dataProps {
+    data: object[]
+}
+export const SkillCard = ({ data }: any) => {
     return (
         <div className="grid grid-cols-3 px-5 py-2 md:grid-cols-8 lg:grid-cols-12">
-            {data.map((i: object, k) => (
+            {data.map((i: itemType, k: number) => (
                 <div
                     key={k}
                     className="relative mb-5 flex h-20 w-36 cursor-pointer flex-col items-center justify-center hover:animate-pulse"

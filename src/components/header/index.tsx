@@ -12,15 +12,15 @@ export const Header = () => {
         'text-xl underline decoration-2 text-orange-700 underline-offset-5'
 
     return (
-        <div className="to-bg-slate-900 flex h-full items-center bg-gradient-to-r from-orange-700 stroke-slate-900 stroke-1 px-4 text-slate-400">
+        <div className="to-bg-slate-900 flex h-full items-center bg-transparent from-orange-700 stroke-slate-900 stroke-1 px-4 text-slate-400 md:bg-gradient-to-r">
             <div className="flex flex-1">
                 <Text
-                    className={`cursor-pointer to-emerald-900 text-lg font-semibold`}
+                    className={`hidden cursor-pointer to-emerald-900 text-lg font-semibold  md:flex`}
                 >
-                    Portfolio.. or something
+                    Frontend Dev
                 </Text>
             </div>
-            <div className="flex  justify-evenly md:hidden">
+            <div className="z-10  flex justify-evenly md:hidden">
                 <MobileMenu />
             </div>
             <div className="hidden w-1/4 justify-evenly md:flex">
