@@ -1,7 +1,7 @@
 import Contact from '../pages/Contact'
 
 const ContactPath = {
-    path: '/Contact',
+    path: '/contact',
     element: <Contact />,
 }
 export default ContactPath

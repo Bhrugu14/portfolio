@@ -69,4 +69,8 @@ export const Familiar = [
         name: 'Java',
         icon: IcJava,
     },
+    {
+        name: 'Android',
+        icon: IcAndroid,
+    },
 ]
