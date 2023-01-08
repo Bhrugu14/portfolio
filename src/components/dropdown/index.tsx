@@ -6,22 +6,22 @@ const solutions = [
     {
         name: 'Home',
         description: 'Measure actions your users take',
-        href: '#home',
+        href: '/#home',
     },
     {
         name: 'Skills',
         description: 'Create your own targeted content',
-        href: '#skills',
+        href: '/#skills',
     },
     {
         name: 'Projects',
         description: 'Keep track of your growth',
-        href: '#projects',
+        href: '/#projects',
     },
     {
         name: 'Contact',
         description: 'Keep track of your growth',
-        href: 'contact',
+        href: '/contact',
     },
 ]
 
@@ -60,7 +60,7 @@ export function MobileMenu() {
                                         {solutions.map((item) => (
                                             <a
                                                 key={item.name}
-                                                href={'/' + item.href}
+                                                href={item.href}
                                                 className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-orange-300 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                                             >
                                                 <div className="">
