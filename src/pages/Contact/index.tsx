@@ -15,7 +15,7 @@ const Contact = () => {
     return (
         <div className="flex w-screen flex-col justify-center">
             <div className="grid w-screen grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-2">
-                <div className="mx-4 flex flex-col ">
+                <div className="mx-4 mb-5 flex flex-col">
                     <Text className="pt-5  text-2xl text-slate-200">Sites</Text>
                     {ContactsData.map((i, k) => (
                         <div
@@ -35,10 +35,10 @@ const Contact = () => {
                     <Text className="my-5 text-2xl text-slate-200">
                         Contact Me
                     </Text>
-                    <div className="grid h-16 grid-cols-2 gap-5">
+                    <div className="grid h-16 grid-cols-1 gap-5 md:grid-cols-2">
                         <a
                             href="tel:+918460304001"
-                            className="flex h-full w-full items-center justify-center rounded-full bg-orange-600  hover:scale-95"
+                            className="flex h-full w-full items-center justify-center rounded-full bg-orange-600  py-3 hover:scale-95"
                         >
                             <Text className="cursor-pointer bg-orange-600 text-center text-lg font-bold text-blue-900 ">
                                 {'Call / WhatsApp '}
@@ -49,7 +49,7 @@ const Contact = () => {
                         </a>
                         <a
                             href="mailto:bhrugu1409@gmail.com"
-                            className="flex h-full w-full items-center justify-center rounded-full bg-orange-600 hover:scale-95"
+                            className="flex h-full w-full items-center justify-center rounded-full bg-orange-600 py-3 hover:scale-95"
                         >
                             <Text className="cursor-pointer text-center text-lg font-bold text-blue-900">
                                 {'Email me On '}
@@ -60,11 +60,13 @@ const Contact = () => {
                         </a>
                     </div>
                 </div>
-                <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.2.146/build/pdf.worker.min.js">
-                    <div className="custom_scroll_bar h-screen">
-                        <Viewer fileUrl={CV} />
-                    </div>
-                </Worker>
+                <div className="mt-5 pt-5">
+                    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.2.146/build/pdf.worker.min.js">
+                        <div className="">
+                            <Viewer fileUrl={CV} />
+                        </div>
+                    </Worker>
+                </div>
             </div>
         </div>
     )
