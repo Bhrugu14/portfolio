@@ -1,5 +1,6 @@
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment, SVGProps } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Text } from '../text'
 
 const solutions = [
@@ -26,6 +27,7 @@ const solutions = [
 ]
 
 export function MobileMenu() {
+    const navigate = useNavigate()
     return (
         <div className="z-10">
             <Popover className="relative z-30">
@@ -58,9 +60,14 @@ export function MobileMenu() {
                                 <div className="z-30 overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                                     <div className="relative grid gap-5 bg-orange-700 p-5 lg:grid-cols-2">
                                         {solutions.map((item) => (
-                                            <a
+                                            <div
                                                 key={item.name}
-                                                href={item.href}
+                                                onClick={() =>
+                                                    item.href.includes('#')
+                                                        ? (window.location.href =
+                                                              item.href)
+                                                        : navigate(item.href)
+                                                }
                                                 className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-orange-300 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                                             >
                                                 <div className="">
@@ -68,7 +75,7 @@ export function MobileMenu() {
                                                         {item.name}
                                                     </Text>
                                                 </div>
-                                            </a>
+                                            </div>
                                         ))}
                                     </div>
                                 </div>
