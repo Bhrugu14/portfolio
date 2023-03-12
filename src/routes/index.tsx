@@ -9,6 +9,13 @@ export const router = createBrowserRouter([
     {
         element: <MainContainer />,
         errorElement: <ErrorPage />,
-        children: [homePaths, ContactPath],
+        path: '/',
+        children: [homePaths],
+    },
+    {
+        element: <MainContainer />,
+        errorElement: <ErrorPage />,
+        path: '/contact',
+        children: [ContactPath],
     },
 ])
