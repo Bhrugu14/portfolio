@@ -3,10 +3,12 @@ import { Popover, Transition } from '@headlessui/react'
 import { Text } from '../text'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { MobileMenu } from '../dropdown'
+import useAnalyticsEventTracker from '../../analytics'
 
 export const Header = () => {
     const { hash, pathname } = useLocation()
     const navigate = useNavigate()
+    const gaEventTracker = useAnalyticsEventTracker('Contact us')
 
     useEffect(() => {
         if (hash) {
@@ -30,7 +32,11 @@ export const Header = () => {
                 <MobileMenu />
             </div>
             <div className="hidden w-1/4 justify-evenly md:flex">
-                <a href="/#home" className="cursor-pointer">
+                <a
+                    href="/#home"
+                    onClick={() => gaEventTracker('home')}
+                    className="cursor-pointer"
+                >
                     <Text
                         className={`cursor-pointer to-emerald-900 stroke-cyan-500 stroke-1 text-lg font-semibold ${
                             hash === '#home' && SelectedStyle
@@ -39,7 +45,11 @@ export const Header = () => {
                         Home
                     </Text>
                 </a>
-                <a href="/#skills" className="cursor-pointer">
+                <a
+                    href="/#skills"
+                    onClick={() => gaEventTracker('skills')}
+                    className="cursor-pointer"
+                >
                     <Text
                         className={`cursor-pointer to-emerald-900 text-lg font-semibold ${
                             hash === '#skills' && SelectedStyle
@@ -48,7 +58,11 @@ export const Header = () => {
                         Skills
                     </Text>
                 </a>
-                <a href="/#projects" className="cursor-pointer">
+                <a
+                    href="/#projects"
+                    onClick={() => gaEventTracker('projects')}
+                    className="cursor-pointer"
+                >
                     <Text
                         className={`cursor-pointer to-emerald-900 text-lg font-semibold ${
                             hash === '#projects' && SelectedStyle
@@ -58,7 +72,10 @@ export const Header = () => {
                     </Text>
                 </a>
                 <a
-                    onClick={() => navigate('/contact')}
+                    onClick={() => {
+                        gaEventTracker('contact')
+                        navigate('/contact')
+                    }}
                     className="cursor-pointer"
                 >
                     <Text
