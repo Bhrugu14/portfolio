@@ -28,7 +28,7 @@ export const Toggle = ({ enabled, setEnabled }: ToggleProps) => {
                             checked ? 'translate-x-6' : '-translate-x-1'
                         } inline-block h-6 w-6 transform rounded-full bg-white transition`}
                     >
-                        <img src={checked ? ic_sun : ic_moon} />
+                        <img src={checked ? ic_sun : ic_moon} alt={'switch'} />
                     </span>
                 </button>
             )}

@@ -26,6 +26,7 @@ const Contact = () => {
                             <img
                                 src={i.icon}
                                 className="h-16 w-16 rounded bg-orange-300 object-fill p-2"
+                                alt={'site'}
                             />
                             <Text className="cursor-pointer pl-5 text-lg font-bold text-white">
                                 {i.name}
