@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Text } from '../text'
 import { useLocation } from 'react-router-dom'
 import { MobileMenu } from '../dropdown'
+import IcBT from '../../assets/BT.png'
 import useAnalyticsEventTracker from '../../analytics'
 
 export const Header = () => {
@@ -19,12 +20,12 @@ export const Header = () => {
 
     return (
         <div className="to-bg-slate-900 flex h-full items-center bg-transparent from-orange-700 stroke-slate-900 stroke-1 px-4 text-slate-400 md:bg-gradient-to-r">
-            <a className="flex flex-1">
-                <Text
-                    className={`hidden cursor-pointer to-emerald-900 text-lg font-semibold  font-bold text-white md:flex`}
-                >
-                    Frontend Dev
-                </Text>
+            <a className="flex flex-1" href="/">
+                <img
+                    src={IcBT}
+                    className={'h-10 w-10 rounded-full object-contain'}
+                    alt={'B'}
+                />
             </a>
             <div className="z-10  flex justify-evenly md:hidden">
                 <MobileMenu />
