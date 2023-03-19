@@ -10,7 +10,7 @@ const MainContainer = ({ children }: any) => {
                 <Header />
             </div>
             <div className="scroll custom_scroll_bar mt-[4rem]  h-[calc(100vh-4rem)]  w-screen overflow-x-hidden scroll-smooth">
-                {children}
+                <Outlet />
             </div>
         </div>
     )

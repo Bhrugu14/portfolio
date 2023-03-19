@@ -7,21 +7,14 @@ import MainThread from '../container/mainStack'
 
 export const router = createBrowserRouter([
     {
-        path: '/',
-        element: (
-            <MainContainer>
-                <MainThread />
-            </MainContainer>
-        ),
+        element: <MainContainer />,
         errorElement: <ErrorPage />,
-    },
-    {
-        path: '/contact',
-        element: (
-            <MainContainer>
-                <Contact />
-            </MainContainer>
-        ),
-        errorElement: <ErrorPage />,
+        children: [
+            {
+                path: '/',
+                element: <MainThread />,
+            },
+            { path: '/contact', element: <Contact /> },
+        ],
     },
 ])
