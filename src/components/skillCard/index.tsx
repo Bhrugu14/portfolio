@@ -22,7 +22,7 @@ export const SkillCard = ({ data }: any) => {
                         className="h-20 w-36 bg-slate-900 object-contain hover:opacity-50"
                         alt={'img'}
                     />
-                    <Text className="absolute -z-10 h-20 w-36 text-center text-slate-50 hover:z-10">
+                    <Text className="absolute -z-10 h-20 w-36 text-center font-bold text-slate-50 hover:z-10">
                         {i.name}
                     </Text>
                 </div>

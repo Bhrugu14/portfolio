@@ -5,6 +5,7 @@ import IcLinkedIn from '../../assets/contacts/linkedin.png'
 import IcStack from '../../assets/contacts/stack-overflow.png'
 import IcHackerRank from '../../assets/contacts/hacker_Rank.png'
 import IcHackerEarth from '../../assets/contacts/hacker_earth.png'
+import IcMedium from '../../assets/skills/medium.png'
 
 export const mainIcon = IcGmail
 export const callIcon = IcPhone
@@ -34,5 +35,10 @@ export const ContactsData = [
         name: 'HackerEarth',
         icon: IcHackerEarth,
         link: 'https://www.hackerearth.com/@bhrugu1409',
+    },
+    {
+        name: 'Medium',
+        icon: IcMedium,
+        link: 'https://medium.com/@bhrugu1409',
     },
 ]

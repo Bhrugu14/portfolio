@@ -23,7 +23,7 @@ export const Header = () => {
         <div className="to-bg-slate-900 flex h-full items-center bg-transparent from-orange-700 stroke-slate-900 stroke-1 px-4 text-slate-400 md:bg-gradient-to-r">
             <div className="flex flex-1">
                 <Text
-                    className={`hidden cursor-pointer to-emerald-900 text-lg font-semibold  md:flex`}
+                    className={`hidden cursor-pointer to-emerald-900 text-lg font-semibold  font-bold text-white md:flex`}
                 >
                     Frontend Dev
                 </Text>
@@ -74,8 +74,8 @@ export const Header = () => {
                 <a
                     onClick={() => {
                         gaEventTracker('contact')
-                        navigate('/contact')
                     }}
+                    href="contact"
                     className="cursor-pointer"
                 >
                     <Text

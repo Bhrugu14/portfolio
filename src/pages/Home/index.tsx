@@ -131,9 +131,11 @@ const Home = () => {
                                     leaveTo="translate-y-0 opacity-100"
                                 >
                                     <img
-                                        className="object-contain hover:animate-none hover:opacity-20 sm:h-1/2"
+                                        className={`object-contain hover:animate-none ${
+                                            open && 'opacity-20'
+                                        } sm:h-1/2`}
                                         onMouseEnter={() => setOpen(true)}
-                                        onMouseLeave={() => setOpen(false)}
+                                        // onMouseLeave={() => setOpen(false)}
                                         src={IcUserImage}
                                         alt=""
                                     />
@@ -141,11 +143,10 @@ const Home = () => {
                                         // <div className="pointer-events-none absolute w-3/4 md:w-1/2">
                                         //     <label className="text-xl text-slate-400">
                                         <TypeAnimation
-                                            className="pointer-events-none absolute w-3/4 text-xl text-slate-400 md:w-1/2"
+                                            className="pointer-events-none absolute w-3/4 text-xl font-bold text-slate-400 md:w-1/2"
                                             sequence={[
-                                                'Hello, I am a frontend developer (for now 😉). in my experience, I have been part of teams, done some solo work, built websites from scratch, fixed bugs in existing code, and been part of the deployment process.',
+                                                'Hello, I am a frontend developer (for now 😉). in my experience, I have been part of teams, done some solo work, built websites from scratch, fixed bugs in existing code, and been part of client communication, design, development and deployment process.',
                                                 1000,
-                                                '',
                                             ]}
                                             omitDeletionAnimation
                                             speed={75}
