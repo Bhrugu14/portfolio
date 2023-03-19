@@ -18,7 +18,7 @@ const Home = () => {
     const dispatch = useAppDispatch()
 
     const Experience = function diff_years() {
-        let dt1 = new Date('August 15, 2020 08:11:00')
+        let dt1 = new Date('July 15, 2020 08:11:00')
         let dt2 = new Date()
         var diff = (dt2.getTime() - dt1.getTime()) / 1000
         diff /= 60 * 60 * 24
