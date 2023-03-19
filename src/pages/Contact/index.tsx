@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Viewer, { Worker } from '@phuocng/react-pdf-viewer'
 import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css'
-import CV from '../../assets/doc/Bhrugu_Resume.pdf'
+// import CV from '../../assets/doc/Bhrugu_Resume.pdf'
+import CV from '../../assets/doc/Bhrugu_Resume_2023.pdf'
 import { ContactsData } from './constant'
 import { Text } from '../../components'
 
 const Contact = () => {
-    const [file, setFile] = useState(false)
-
     const openInNewTab = (url: string) => {
         window.open(url, '_blank', 'noreferrer')
     }
