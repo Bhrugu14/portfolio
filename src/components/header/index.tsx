@@ -20,13 +20,17 @@ export const Header = () => {
 
     return (
         <div className="to-bg-slate-900 flex h-full items-center bg-transparent from-orange-700 stroke-slate-900 stroke-1 px-4 text-slate-400 md:bg-gradient-to-r">
-            <a className="flex flex-1" href="/">
-                <img
-                    src={IcBT}
-                    className={'h-10 w-10 rounded-full object-contain'}
-                    alt={'B'}
-                />
-            </a>
+            <div className="flex flex-1">
+                <a href="/">
+                    <img
+                        src={IcBT}
+                        className={
+                            'h-10 w-10 rounded-full object-contain bg-blend-multiply'
+                        }
+                        alt={'B'}
+                    />
+                </a>
+            </div>
             <div className="z-10  flex justify-evenly md:hidden">
                 <MobileMenu />
             </div>
