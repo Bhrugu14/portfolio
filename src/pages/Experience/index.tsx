@@ -33,7 +33,7 @@ function Experience() {
                                 flipDirection="horizontal"
                             >
                                 <div
-                                    className={`flex h-52 flex-col content-center items-center justify-center rounded bg-orange-600 shadow-lg shadow-slate-700 hover:scale-105`}
+                                    className={`flex h-52 flex-col content-center items-center justify-center rounded bg-orange-600 px-2 shadow-lg shadow-slate-700 hover:scale-105`}
                                     onClick={() => {
                                         ArrayData[k].isOpen = true
                                         setData(ArrayData)
