@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import Viewer, { Worker } from '@phuocng/react-pdf-viewer'
-import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css'
-// import CV from '../../assets/doc/Bhrugu_Resume.pdf'
+import React from 'react'
 import CV from '../../assets/doc/Bhrugu_Resume_2023.pdf'
 import { ContactsData } from './constant'
 import { Text } from '../../components'
@@ -60,11 +57,13 @@ const Contact = () => {
                         </a>
                     </div>
                 </div>
-                <div className="mt-5 pt-5">
-                    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.2.146/build/pdf.worker.min.js">
-                        <Viewer fileUrl={CV} />
-                    </Worker>
-                </div>
+                <object
+                    className="mt-12 mb-5 h-full w-[100%] px-[2.5%]"
+                    type="application/pdf"
+                    data={CV}
+                >
+                    <Text>...loading</Text>
+                </object>
             </div>
         </div>
     )
