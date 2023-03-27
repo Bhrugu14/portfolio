@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CV from '../../assets/doc/Bhrugu_Resume_2023.pdf'
 import { ContactsData } from './constant'
 import { Text } from '../../components'
@@ -57,13 +57,15 @@ const Contact = () => {
                         </a>
                     </div>
                 </div>
-                <object
-                    className="mt-12 mb-5 h-full w-[100%] px-[2.5%]"
-                    type="application/pdf"
-                    data={CV}
-                >
-                    <Text>...loading</Text>
-                </object>
+                <div className="mt-5 pt-5">
+                    <embed
+                        src={CV}
+                        key={CV}
+                        type="application/pdf"
+                        height={'100%'}
+                        width={'100%'}
+                    />
+                </div>
             </div>
         </div>
     )
