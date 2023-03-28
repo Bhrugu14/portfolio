@@ -27,7 +27,7 @@ export const ContactsData = [
         link: 'https://stackoverflow.com/users/7034453/bhrugu-tundeliya',
     },
     {
-        name: 'HackerRank   ',
+        name: 'HackerRank',
         icon: IcHackerRank,
         link: 'https://www.hackerrank.com/knowbhrugu14',
     },

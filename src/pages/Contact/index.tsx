@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import CV from '../../assets/doc/Bhrugu_Resume_2023.pdf'
 import { ContactsData } from './constant'
 import { Text } from '../../components'
+import useAnalyticsEventTracker from '../../analytics'
 
 const Contact = () => {
     const openInNewTab = (url: string) => {
         window.open(url, '_blank', 'noreferrer')
     }
+    const gaEventTracker = useAnalyticsEventTracker('External Links')
 
     return (
         <div className="flex w-screen flex-col justify-center">
@@ -17,7 +19,10 @@ const Contact = () => {
                         <div
                             key={k + 'ContactsData'}
                             className="mt-2 flex cursor-pointer items-center bg-orange-600 p-1 hover:-translate-y-1.5 hover:animate-pulse"
-                            onClick={() => openInNewTab(i.link)}
+                            onClick={() => {
+                                gaEventTracker(i.link, i.name)
+                                openInNewTab(i.link)
+                            }}
                         >
                             <img
                                 src={i.icon}
