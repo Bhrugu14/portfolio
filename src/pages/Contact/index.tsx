@@ -51,6 +51,7 @@ const Contact = () => {
                         </a>
                         <a
                             href="mailto:bhrugu1409@gmail.com"
+                            target="_blank"
                             className="flex h-full w-full items-center justify-center rounded-full bg-orange-600 py-3 hover:scale-95"
                         >
                             <Text className="cursor-pointer text-center text-lg font-bold text-blue-900">
