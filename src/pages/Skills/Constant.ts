@@ -12,6 +12,20 @@ import IcJava from '../../assets/skills/java.png'
 import IcExpress from '../../assets/skills/express.png'
 import IcNode from '../../assets/skills/node-js.png'
 import IcAndroid from '../../assets/skills/android.png'
+import IcReactBootstrap from '../../assets/skills/react-bootstrap.png'
+import IcReactNativePaper from '../../assets/skills/react-native-paper.jpeg'
+import IcUiKitten from '../../assets/skills/ui-kitten.png'
+import IcAntDUi from '../../assets/skills/antd-ui.png'
+import IcMaterialUi from '../../assets/skills/material-ui.png'
+import IcTailwind from '../../assets/skills/tailwind-css-icon.png'
+import IcJest from '../../assets/skills/jest-js-icon.png'
+import IcSql from '../../assets/skills/sql-server.png'
+import IcGit from '../../assets/skills/git.png'
+import IcFirebase from '../../assets/skills/firebase.webp'
+import IcReactQuery from '../../assets/skills/react-query.png'
+import IcAws from '../../assets/skills/aws.png'
+import IcNext from '../../assets/skills/nextjs-icon.png'
+import IcGitHub from '../../assets/skills/github.png'
 
 export const skillsData = [
     {
@@ -39,12 +53,56 @@ export const skillsData = [
         icon: IcJs,
     },
     {
+        name: 'Next js',
+        icon: IcNext,
+    },
+    {
         name: 'Redux',
         icon: IcRedux,
     },
     {
         name: 'MobX',
         icon: IcMobx,
+    },
+    {
+        name: 'Firebase',
+        icon: IcFirebase,
+    },
+    {
+        name: 'React Query',
+        icon: IcReactQuery,
+    },
+    {
+        name: 'React Bootstrap',
+        icon: IcReactBootstrap,
+    },
+    {
+        name: 'Tailwind',
+        icon: IcTailwind,
+    },
+    {
+        name: 'Ant Design',
+        icon: IcAntDUi,
+    },
+    {
+        name: 'Material Ui',
+        icon: IcMaterialUi,
+    },
+    {
+        name: 'React Native Paper',
+        icon: IcReactNativePaper,
+    },
+    {
+        name: 'Ui Kitten',
+        icon: IcUiKitten,
+    },
+    {
+        name: 'Jest',
+        icon: IcJest,
+    },
+    {
+        name: 'Git',
+        icon: IcGit,
     },
 ]
 
@@ -72,5 +130,13 @@ export const Familiar = [
     {
         name: 'Android',
         icon: IcAndroid,
+    },
+    {
+        name: 'SQL',
+        icon: IcSql,
+    },
+    {
+        name: 'AWS',
+        icon: IcAws,
     },
 ]

@@ -2,14 +2,16 @@ import React from 'react'
 import { SkillCard, Text } from '../../components'
 import { Familiar, skillsData } from './Constant'
 
-function Skills() {
+const Skills = () => {
     return (
         <div
             id="skills"
             className="relative row-span-1 flex h-full w-full flex-1 flex-col overflow-x-hidden py-5"
         >
-            <div className="absolute bottom-5 right-5">
-                <Text className="text-white ">{'Know More'}</Text>
+            <div className="absolute bottom-5 right-5 animate-pulse cursor-pointer ">
+                <Text className="cursor-pointer text-white drop-shadow-xl">
+                    {'Know More >'}
+                </Text>
             </div>
             <div className="">
                 <Text className="px-5 text-2xl  text-slate-200">

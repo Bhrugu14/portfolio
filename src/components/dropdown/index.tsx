@@ -1,6 +1,6 @@
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment, SVGProps } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { Text } from '../text'
 
 const solutions = [
@@ -28,6 +28,7 @@ const solutions = [
 
 export function MobileMenu() {
     const navigate = useNavigate()
+    const location = useLocation()
     return (
         <div className="z-10">
             <Popover className="relative z-30">
@@ -63,7 +64,19 @@ export function MobileMenu() {
                                             <div
                                                 key={item.name}
                                                 onClick={() =>
-                                                    item.href.includes('#')
+                                                    item.name === 'Home'
+                                                        ? location.pathname.includes(
+                                                              'contact'
+                                                          )
+                                                            ? (window.location.href =
+                                                                  '/')
+                                                            : window.scrollTo(
+                                                                  0,
+                                                                  0
+                                                              )
+                                                        : item.href.includes(
+                                                              '#'
+                                                          )
                                                         ? (window.location.href =
                                                               item.href)
                                                         : navigate(item.href)

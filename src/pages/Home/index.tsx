@@ -15,14 +15,20 @@ const Home = () => {
     })
 
     const count = useAppSelector((state) => state.counter.value)
-    const dispatch = useAppDispatch()
 
     const Experience = function diff_years() {
-        let dt1 = new Date('July 15, 2020 08:11:00')
-        let dt2 = new Date()
-        var diff = (dt2.getTime() - dt1.getTime()) / 1000
-        diff /= 60 * 60 * 24
-        return Math.abs(Math.floor((diff / 365.25) * 10) / 10)
+        let startDate = new Date('July 15, 2020 08:11:00')
+        let today = new Date()
+        const diffInMonths =
+            (today.getFullYear() - startDate.getFullYear()) * 12 +
+            (today.getMonth() - startDate.getMonth())
+
+        const totalYears = Math.floor(diffInMonths / 12)
+        const remainingMonths = diffInMonths % 12
+        const decimalYears = remainingMonths / 12
+
+        const result = totalYears + decimalYears
+        return `${result.toFixed(1)}`
     }
 
     return (

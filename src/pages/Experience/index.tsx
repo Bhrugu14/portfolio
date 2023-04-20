@@ -43,10 +43,10 @@ function Experience() {
                                     <Text className="cursor-pointer text-center text-xl font-black text-white no-underline decoration-1 antialiased">
                                         {i.name}
                                     </Text>
-                                    <div className="text-base italic text-gray-200">
+                                    <div className="text-center text-base italic text-gray-200">
                                         {i.skills.map((j, l, arr) => (
                                             <Text
-                                                className=" cursor-pointer text-center"
+                                                className="cursor-pointer text-center"
                                                 key={l + 'skills'}
                                             >
                                                 {j}

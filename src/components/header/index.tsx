@@ -21,7 +21,7 @@ export const Header = () => {
     return (
         <div className="to-bg-slate-900 flex h-full items-center bg-transparent from-orange-700 stroke-slate-900 stroke-1 px-4 text-slate-400 md:bg-gradient-to-r">
             <div className="flex flex-1">
-                <a href="/">
+                <a href="/" className="hidden md:flex">
                     <img
                         src={IcBT}
                         className={
@@ -34,11 +34,11 @@ export const Header = () => {
             <div className="z-10  flex justify-evenly md:hidden">
                 <MobileMenu />
             </div>
-            <div className="hidden w-1/4 justify-evenly md:flex">
+            <div className="hidden justify-evenly md:flex">
                 <a
                     href="/#home"
                     onClick={() => gaEventTracker('home')}
-                    className="cursor-pointer"
+                    className="cursor-pointer px-2"
                 >
                     <Text
                         className={`cursor-pointer to-emerald-900 stroke-cyan-500 stroke-1 text-lg font-semibold ${
@@ -51,7 +51,7 @@ export const Header = () => {
                 <a
                     href="/#skills"
                     onClick={() => gaEventTracker('skills')}
-                    className="cursor-pointer"
+                    className="cursor-pointer px-2"
                 >
                     <Text
                         className={`cursor-pointer to-emerald-900 text-lg font-semibold ${
@@ -64,7 +64,7 @@ export const Header = () => {
                 <a
                     href="/#projects"
                     onClick={() => gaEventTracker('projects')}
-                    className="cursor-pointer"
+                    className="cursor-pointer px-2"
                 >
                     <Text
                         className={`cursor-pointer to-emerald-900 text-lg font-semibold ${
@@ -79,7 +79,7 @@ export const Header = () => {
                         gaEventTracker('contact')
                     }}
                     href="contact"
-                    className="cursor-pointer"
+                    className="cursor-pointer px-2"
                 >
                     <Text
                         className={`cursor-pointer to-emerald-900 text-lg font-semibold ${

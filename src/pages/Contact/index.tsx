@@ -37,7 +37,7 @@ const Contact = () => {
                     <Text className="my-5 text-2xl text-slate-200">
                         Contact Me
                     </Text>
-                    <div className="grid h-16 grid-cols-1 gap-5 md:grid-cols-2">
+                    <div className="grid h-16 grid-cols-1 gap-5 xl:grid-cols-2">
                         <a
                             href="tel:+918460304001"
                             className="flex h-full w-full items-center justify-center rounded-full bg-orange-600  py-3 hover:scale-95"

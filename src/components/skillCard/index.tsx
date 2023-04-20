@@ -11,11 +11,11 @@ interface dataProps {
 }
 export const SkillCard = ({ data }: any) => {
     return (
-        <div className="grid grid-cols-3 px-5 py-2 md:grid-cols-8 lg:grid-cols-12">
+        <div className="flex flex-1 flex-wrap px-5 py-2">
             {data.map((i: itemType, k: number) => (
                 <div
                     key={k}
-                    className="relative mb-5 flex h-20 w-36 cursor-pointer flex-col items-center justify-center hover:animate-pulse"
+                    className="relative mb-5 flex h-20 min-w-fit cursor-pointer flex-col items-center justify-center hover:animate-pulse"
                 >
                     <img
                         src={i.icon}
