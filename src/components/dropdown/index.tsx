@@ -64,19 +64,7 @@ export function MobileMenu() {
                                             <div
                                                 key={item.name}
                                                 onClick={() =>
-                                                    item.name === 'Home'
-                                                        ? location.pathname.includes(
-                                                              'contact'
-                                                          )
-                                                            ? (window.location.href =
-                                                                  '/')
-                                                            : window.scrollTo(
-                                                                  0,
-                                                                  0
-                                                              )
-                                                        : item.href.includes(
-                                                              '#'
-                                                          )
+                                                    item.href.includes('#')
                                                         ? (window.location.href =
                                                               item.href)
                                                         : navigate(item.href)
