@@ -11,21 +11,38 @@ function Experience() {
     const { ref: exRef, inView } = useInView({
         threshold: 0,
         triggerOnce: true,
-        // fallbackInView: true,
     })
 
     return (
         <div id="projects" className="flex h-full w-full flex-1 flex-col p-5">
             <Transition className={'h-full w-full'} show={inView} appear={true}>
                 <div className="grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-4">
-                    {ArrayData.map((i, k) => (
+                    {/* <Transition.Child
+                        enter={`transition transform duration-[50ms] delay-500`} // Use k * delay increment
+                        enterFrom={`scale-0 opacity-0`}
+                        enterTo="scale-1 opacity-100"
+                        leave="transition-opacity duration-0"
+                        leaveFrom="translate-x-0 opacity-100"
+                        leaveTo="translate-x-0 opacity-100"
+                    >
+                        <div className="bg-green-200">HEllo</div>
+                    </Transition.Child>
+                    <Transition.Child
+                        enter={`transition transform duration-[100ms] delay-600`} // Use k * delay increment
+                        enterFrom={`scale-0 opacity-0`}
+                        enterTo="scale-0 opacity-100"
+                        leave="transition-opacity duration-0"
+                        leaveFrom="translate-x-0 opacity-100"
+                        leaveTo="translate-x-0 opacity-100"
+                    >
+                        <div className="bg-green-200">Ok</div>
+                    </Transition.Child> */}
+                    {ArrayData.map((i, k, arr) => (
                         <Transition.Child
-                            enter={`duration-${k * 500} delay-${k * 500}`}
-                            enterFrom={`translate-y-${k * 32} opacity-0`}
-                            enterTo="translate-y-0 opacity-100"
-                            leave="transition-opacity duration-150"
-                            leaveFrom="translate-y-0 opacity-100"
-                            leaveTo="translate-y-0 opacity-100"
+                            key={'Project' + k}
+                            enter={`transition transform duration-[1000ms] delay-[${k}00ms]`} // Use k * delay increment
+                            enterFrom={`scale-0 opacity-0`}
+                            enterTo="scale-100 opacity-100"
                         >
                             <ReactCardFlip
                                 containerClassName="cursor-pointer relative"

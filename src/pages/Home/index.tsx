@@ -4,7 +4,7 @@ import { Text } from '../../components'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { useInView } from 'react-intersection-observer'
 import { TypeAnimation } from 'react-type-animation'
-import IcUserImage from '../../assets/man.png'
+import IcUserImage from '../../assets/background-less-profile.webp'
 
 const Home = () => {
     const [open, setOpen] = useState(false)
@@ -136,20 +136,22 @@ const Home = () => {
                                     leaveFrom="translate-y-0 opacity-100"
                                     leaveTo="translate-y-0 opacity-100"
                                 >
-                                    <img
-                                        className={`object-contain hover:animate-none ${
-                                            open && 'opacity-20'
-                                        } sm:h-1/2`}
-                                        onMouseEnter={() => setOpen(true)}
-                                        // onMouseLeave={() => setOpen(false)}
-                                        src={IcUserImage}
-                                        alt=""
-                                    />
+                                    <div className="item-center flex h-[400px] w-[400px] shrink-0 grow-0 justify-center rounded-full bg-orange-700 sm:h-[75vw] sm:w-[75vw] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]">
+                                        <img
+                                            className={`z-10 h-full w-full rounded-full object-cover hover:animate-none ${
+                                                open && 'opacity-20'
+                                            } `}
+                                            onMouseEnter={() => setOpen(true)}
+                                            // onMouseLeave={() => setOpen(false)}
+                                            src={IcUserImage}
+                                            alt=""
+                                        />
+                                    </div>
                                     {open && (
                                         // <div className="pointer-events-none absolute w-3/4 md:w-1/2">
                                         //     <label className="text-xl text-slate-400">
                                         <TypeAnimation
-                                            className="pointer-events-none absolute w-3/4 text-xl font-bold text-slate-400 md:w-1/2"
+                                            className="pointer-events-none absolute w-4/5 text-xl font-bold text-slate-400 md:w-1/2 lg:w-2/3"
                                             sequence={[
                                                 'Hello, I am a frontend developer (for now 😉). in my experience, I have been part of teams, done some solo work, built websites from scratch, fixed bugs in existing code, and been part of client communication, design, development and deployment process.',
                                                 1000,

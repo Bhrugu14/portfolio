@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import CV from '../../assets/doc/Bhrugu_Resume_2023.pdf'
+import React, { useState } from 'react'
+import CV from '../../assets/doc/Bhrugu_Tundeliya_Resume.pdf'
 import { ContactsData } from './constant'
 import { Text } from '../../components'
 import useAnalyticsEventTracker from '../../analytics'
@@ -9,10 +9,13 @@ const Contact = () => {
         window.open(url, '_blank', 'noreferrer')
     }
     const gaEventTracker = useAnalyticsEventTracker('External Links')
-
+    const [pageNumber, setPageNumber] = useState<number>(1)
+    function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
+        setPageNumber(numPages)
+    }
     return (
-        <div className="flex w-screen flex-col justify-center">
-            <div className="grid w-screen grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-2">
+        <div className="flex h-full w-screen flex-col justify-center">
+            <div className="grid h-full w-screen grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-2">
                 <div className="mx-4 mb-5 flex flex-col">
                     <Text className="pt-5  text-2xl text-slate-200">Sites</Text>
                     {ContactsData.map((i, k) => (
@@ -63,7 +66,7 @@ const Contact = () => {
                         </a>
                     </div>
                 </div>
-                <div className="mt-5 pt-5">
+                <div className="mx-auto mt-5 flex h-full w-[95%] pt-5">
                     <embed
                         src={CV}
                         key={CV}

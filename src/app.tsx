@@ -27,7 +27,6 @@ if (
 // localStorage.removeItem('theme')
 const TRACKING_ID = 'UA-259206007-1' // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID)
-
 const App = () => {
     return (
         <Provider store={store}>
