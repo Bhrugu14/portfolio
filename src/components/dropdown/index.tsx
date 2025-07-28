@@ -69,10 +69,25 @@ export function MobileMenu() {
                                                               item.href)
                                                         : navigate(item.href)
                                                 }
-                                                className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-orange-300 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                                                className="flex items-center rounded-lg p-2 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-orange-300 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                                                role="button"
+                                                tabIndex={0}
+                                                onKeyDown={(e) => {
+                                                    if (
+                                                        e.key === 'Enter' ||
+                                                        e.key === ' '
+                                                    ) {
+                                                        item.href.includes('#')
+                                                            ? (window.location.href =
+                                                                  item.href)
+                                                            : navigate(
+                                                                  item.href
+                                                              )
+                                                    }
+                                                }}
                                             >
-                                                <div className="">
-                                                    <Text className="text-sm text-xl font-medium font-bold text-white hover:text-orange-700">
+                                                <div>
+                                                    <Text className="text-xl font-bold text-white transition-colors duration-300 hover:text-orange-700">
                                                         {item.name}
                                                     </Text>
                                                 </div>

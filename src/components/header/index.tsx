@@ -38,11 +38,14 @@ export const Header = () => {
                 <a
                     href="/#home"
                     onClick={() => gaEventTracker('home')}
-                    className="cursor-pointer px-2"
+                    className="cursor-pointer px-2 transition-all duration-300 hover:scale-105"
+                    aria-label="Navigate to Home section"
                 >
                     <Text
-                        className={`cursor-pointer to-emerald-900 stroke-cyan-500 stroke-1 text-lg font-semibold ${
-                            hash === '#home' && SelectedStyle
+                        className={`cursor-pointer text-lg font-semibold transition-colors duration-300 ${
+                            hash === '#home'
+                                ? SelectedStyle
+                                : 'hover:text-orange-500'
                         }`}
                     >
                         Home
@@ -51,11 +54,14 @@ export const Header = () => {
                 <a
                     href="/#skills"
                     onClick={() => gaEventTracker('skills')}
-                    className="cursor-pointer px-2"
+                    className="cursor-pointer px-2 transition-all duration-300 hover:scale-105"
+                    aria-label="Navigate to Skills section"
                 >
                     <Text
-                        className={`cursor-pointer to-emerald-900 text-lg font-semibold ${
-                            hash === '#skills' && SelectedStyle
+                        className={`cursor-pointer text-lg font-semibold transition-colors duration-300 ${
+                            hash === '#skills'
+                                ? SelectedStyle
+                                : 'hover:text-orange-500'
                         }`}
                     >
                         Skills
@@ -64,11 +70,14 @@ export const Header = () => {
                 <a
                     href="/#projects"
                     onClick={() => gaEventTracker('projects')}
-                    className="cursor-pointer px-2"
+                    className="cursor-pointer px-2 transition-all duration-300 hover:scale-105"
+                    aria-label="Navigate to Experience section"
                 >
                     <Text
-                        className={`cursor-pointer to-emerald-900 text-lg font-semibold ${
-                            hash === '#projects' && SelectedStyle
+                        className={`cursor-pointer text-lg font-semibold transition-colors duration-300 ${
+                            hash === '#projects'
+                                ? SelectedStyle
+                                : 'hover:text-orange-500'
                         }`}
                     >
                         Experience
@@ -79,11 +88,14 @@ export const Header = () => {
                         gaEventTracker('contact')
                     }}
                     href="contact"
-                    className="cursor-pointer px-2"
+                    className="cursor-pointer px-2 transition-all duration-300 hover:scale-105"
+                    aria-label="Navigate to Contact page"
                 >
                     <Text
-                        className={`cursor-pointer to-emerald-900 text-lg font-semibold ${
-                            pathname.includes('/contact') && SelectedStyle
+                        className={`cursor-pointer text-lg font-semibold transition-colors duration-300 ${
+                            pathname.includes('/contact')
+                                ? SelectedStyle
+                                : 'hover:text-orange-500'
                         }`}
                     >
                         Contact

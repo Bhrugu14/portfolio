@@ -7,7 +7,7 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    color: var();
+    color: #1e293b;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -43,4 +43,55 @@ body::-webkit-scrollbar {
 }
 .custom_scroll_bar::-webkit-scrollbar {
     display: none;
+}
+
+/* Enhanced animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition-property: transform, opacity, background-color, border-color,
+        color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
+}
+
+/* Improved hover effects */
+.hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }

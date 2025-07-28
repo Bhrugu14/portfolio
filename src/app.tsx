@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { router } from './routes'
 import { persistor, store } from './store'
 import { PersistGate } from 'redux-persist/integration/react'
+import { ErrorBoundary, PageLoading } from './components'
 import './index.css'
 
 if (
@@ -29,11 +30,13 @@ const TRACKING_ID = 'UA-259206007-1' // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID)
 const App = () => {
     return (
-        <Provider store={store}>
-            <PersistGate loading={null} persistor={persistor}>
-                <RouterProvider router={router} />
-            </PersistGate>
-        </Provider>
+        <ErrorBoundary>
+            <Provider store={store}>
+                <PersistGate loading={<PageLoading />} persistor={persistor}>
+                    <RouterProvider router={router} />
+                </PersistGate>
+            </Provider>
+        </ErrorBoundary>
     )
 }
 export default App

@@ -4,14 +4,14 @@ import { Text } from '../../components'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { useInView } from 'react-intersection-observer'
 import { TypeAnimation } from 'react-type-animation'
-import IcUserImage from '../../assets/background-less-profile.webp'
+import IcUserImage from '../../assets/man.png'
 
 const Home = () => {
     const [open, setOpen] = useState(false)
     const { ref, inView } = useInView({
-        threshold: 0,
+        threshold: 0.1,
         triggerOnce: true,
-        // fallbackInView: true,
+        fallbackInView: true,
     })
 
     const count = useAppSelector((state) => state.counter.value)
@@ -136,32 +136,33 @@ const Home = () => {
                                     leaveFrom="translate-y-0 opacity-100"
                                     leaveTo="translate-y-0 opacity-100"
                                 >
-                                    <div className="item-center flex h-[400px] w-[400px] shrink-0 grow-0 justify-center rounded-full bg-orange-700 sm:h-[75vw] sm:w-[75vw] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]">
+                                    <div className="item-center flex h-[400px] w-[400px] shrink-0 grow-0 justify-center rounded-full  sm:h-[75vw] sm:w-[75vw] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]">
                                         <img
-                                            className={`z-10 h-full w-full rounded-full object-cover hover:animate-none ${
-                                                open && 'opacity-20'
-                                            } `}
+                                            className={`z-10 h-full w-full rounded-full object-cover transition-all duration-500 hover:scale-105 ${
+                                                open
+                                                    ? 'opacity-20'
+                                                    : 'opacity-100'
+                                            }`}
                                             onMouseEnter={() => setOpen(true)}
-                                            // onMouseLeave={() => setOpen(false)}
+                                            onMouseLeave={() => setOpen(false)}
                                             src={IcUserImage}
-                                            alt=""
+                                            alt="Bhrugu Tundeliya - React Developer"
                                         />
                                     </div>
                                     {open && (
-                                        // <div className="pointer-events-none absolute w-3/4 md:w-1/2">
-                                        //     <label className="text-xl text-slate-400">
-                                        <TypeAnimation
-                                            className="pointer-events-none absolute w-4/5 text-xl font-bold text-slate-400 md:w-1/2 lg:w-2/3"
-                                            sequence={[
-                                                'Hello, I am a frontend developer (for now 😉). in my experience, I have been part of teams, done some solo work, built websites from scratch, fixed bugs in existing code, and been part of client communication, design, development and deployment process.',
-                                                1000,
-                                            ]}
-                                            omitDeletionAnimation
-                                            speed={75}
-                                            wrapper="h2"
-                                            repeat={1}
-                                        />
-                                        // </div>
+                                        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                                            <TypeAnimation
+                                                className="w-4/5 text-center text-xl font-bold text-slate-200 md:w-1/2 lg:w-2/3"
+                                                sequence={[
+                                                    'Hello, I am a MERN Stack developer. In my experience, I have been part of teams, done some solo work, built websites from scratch, fixed bugs in existing code, and been part of client communication, design, development and deployment process.',
+                                                    1000,
+                                                ]}
+                                                omitDeletionAnimation
+                                                speed={75}
+                                                wrapper="h2"
+                                                repeat={1}
+                                            />
+                                        </div>
                                     )}
                                 </Transition.Child>
                             </div>
