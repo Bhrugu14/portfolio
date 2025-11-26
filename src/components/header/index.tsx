@@ -25,7 +25,7 @@ export const Header = () => {
                     <img
                         src={IcBT}
                         className={
-                            'h-10 w-10 rounded-full object-contain bg-blend-multiply'
+                            'h-10 w-10 rounded-full object-contain bg-blend-multiply hw-accelerate transition-transform duration-300 hover:scale-110 hover:rotate-12'
                         }
                         alt={'B'}
                     />

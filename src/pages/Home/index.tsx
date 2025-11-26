@@ -43,8 +43,8 @@ const Home = () => {
                 >
                     <div className="grid h-full w-full sm:grid-cols-1 md:grid-cols-2">
                         <Transition.Child
-                            className={'col-span-1 md:h-[calc(100vh-4rem)]'}
-                            enter="duration-500 delay-100"
+                            className={'col-span-1 md:h-[calc(100vh-4rem)] hw-accelerate'}
+                            enter="duration-700 delay-100 ease-out"
                             enterFrom="translate-x-32 opacity-0"
                             enterTo="translate-x-0 opacity-100"
                             leave="transition-opacity duration-150"
@@ -52,13 +52,13 @@ const Home = () => {
                             leaveTo="translate-x-0 opacity-100"
                         >
                             <div className="flex h-full w-full flex-1 flex-col items-center justify-center px-4">
-                                <div className="flex flex-col">
+                                <div className="flex flex-col space-y-2">
                                     <Text className="text-orange-600">
                                         <Transition.Child
                                             className={
-                                                'text-3xl hover:scale-105 md:text-6xl'
+                                                'text-3xl hw-accelerate transition-all duration-300 hover:scale-105 md:text-6xl'
                                             }
-                                            enter="duration-500 delay-500"
+                                            enter="duration-700 delay-300 ease-out"
                                             enterFrom="-translate-y-32 opacity-0"
                                             enterTo="-translate-y-0 opacity-100"
                                             leave="transition-opacity duration-150"
@@ -68,12 +68,12 @@ const Home = () => {
                                             {'Bhrugu Tundeliya'}
                                         </Transition.Child>
                                     </Text>
-                                    <Text className="mt-2 text-slate-400 hover:scale-105 hover:text-react-color">
+                                    <Text className="mt-2 text-slate-400">
                                         <Transition.Child
                                             className={
-                                                'text-2xl hover:text-react-color'
+                                                'text-2xl hw-accelerate transition-all duration-300 hover:scale-105 hover:text-react-color'
                                             }
-                                            enter="duration-500 delay-500"
+                                            enter="duration-700 delay-500 ease-out"
                                             enterFrom="-translate-x-32 opacity-0"
                                             enterTo="-translate-x-0 opacity-100"
                                             leave="transition-opacity duration-150"
@@ -83,12 +83,12 @@ const Home = () => {
                                             {`React Developer (${Experience()} years)`}
                                         </Transition.Child>
                                     </Text>
-                                    <Text className="text-slate-400 hover:scale-105 hover:text-react-color  ">
+                                    <Text className="text-slate-400">
                                         <Transition.Child
                                             className={
-                                                'text-2xl hover:text-react-color'
+                                                'text-2xl hw-accelerate transition-all duration-300 hover:scale-105 hover:text-react-color'
                                             }
-                                            enter="duration-500 delay-500"
+                                            enter="duration-700 delay-700 ease-out"
                                             enterFrom="translate-x-32 opacity-0"
                                             enterTo="translate-x-0 opacity-100"
                                             leave="transition-opacity duration-150"
@@ -100,8 +100,8 @@ const Home = () => {
                                     </Text>
                                     <Text className="mt-1 text-slate-400">
                                         <Transition.Child
-                                            className={'text-base'}
-                                            enter="duration-500 delay-500"
+                                            className={'text-base hw-accelerate'}
+                                            enter="duration-700 delay-900 ease-out"
                                             enterFrom="translate-y-32 opacity-0"
                                             enterTo="translate-y-0 opacity-100"
                                             leave="transition-opacity duration-150"
@@ -116,8 +116,8 @@ const Home = () => {
                             </div>
                         </Transition.Child>
                         <Transition.Child
-                            className={'md:h-[calc(100vh-4rem)]'}
-                            enter="duration-500 delay-100"
+                            className={'md:h-[calc(100vh-4rem)] hw-accelerate'}
+                            enter="duration-700 delay-200 ease-out"
                             enterFrom="-translate-x-32 opacity-0"
                             enterTo="-translate-x-0 opacity-100"
                             leave="transition-opacity duration-150"
@@ -127,18 +127,18 @@ const Home = () => {
                             <div className="relative flex h-full w-full flex-1 flex-col items-center justify-center">
                                 <Transition.Child
                                     className={
-                                        'flex h-1/2 w-full items-center justify-center md:h-full lg:h-full'
+                                        'flex h-1/2 w-full items-center justify-center md:h-full lg:h-full hw-accelerate'
                                     }
-                                    enter="duration-1000 delay-100"
-                                    enterFrom="translate-x-0 scale-0"
-                                    enterTo="translate-x-0 scale-1"
+                                    enter="duration-1000 delay-400 ease-out"
+                                    enterFrom="translate-x-0 scale-75 opacity-0"
+                                    enterTo="translate-x-0 scale-100 opacity-100"
                                     leave="transition-opacity duration-150"
                                     leaveFrom="translate-y-0 opacity-100"
                                     leaveTo="translate-y-0 opacity-100"
                                 >
                                     <div className="item-center flex h-[400px] w-[400px] shrink-0 grow-0 justify-center rounded-full  sm:h-[75vw] sm:w-[75vw] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]">
                                         <img
-                                            className={`z-10 h-full w-full rounded-full object-cover transition-all duration-500 hover:scale-105 ${
+                                            className={`z-10 h-full w-full rounded-full object-cover hw-accelerate transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/50 ${
                                                 open
                                                     ? 'opacity-20'
                                                     : 'opacity-100'
@@ -150,9 +150,9 @@ const Home = () => {
                                         />
                                     </div>
                                     {open && (
-                                        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                                        <div className="pointer-events-none absolute inset-0 flex items-center justify-center animate-fade-in-up">
                                             <TypeAnimation
-                                                className="w-4/5 text-center text-xl font-bold text-slate-200 md:w-1/2 lg:w-2/3"
+                                                className="w-4/5 text-center text-xl font-bold text-slate-200 drop-shadow-lg md:w-1/2 lg:w-2/3"
                                                 sequence={[
                                                     'Hello, I am a MERN Stack developer. In my experience, I have been part of teams, done some solo work, built websites from scratch, fixed bugs in existing code, and been part of client communication, design, development and deployment process.',
                                                     1000,

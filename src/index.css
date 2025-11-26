@@ -29,7 +29,6 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     /* scrollbar-gutter: stable; */
-    transition: all;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -45,43 +44,105 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-/* Enhanced animations */
+/* Enhanced animations with GPU acceleration */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(30px) translateZ(0);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) translateZ(0);
     }
 }
 
 @keyframes scaleIn {
     from {
         opacity: 0;
-        transform: scale(0.8);
+        transform: scale(0.8) translateZ(0);
     }
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1) translateZ(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px) translateZ(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) translateZ(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px) translateZ(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) translateZ(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateZ(0);
+    }
+    50% {
+        transform: translateY(-10px) translateZ(0);
     }
 }
 
 .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.6s ease-out both;
 }
 
 .animate-scale-in {
-    animation: scaleIn 0.4s ease-out;
+    animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
-/* Smooth transitions for all interactive elements */
-* {
+.animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out both;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out both;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* GPU acceleration for transforms */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+/* Smooth transitions for interactive elements - more specific selector */
+button,
+a,
+[role="button"],
+.interactive {
     transition-property: transform, opacity, background-color, border-color,
         color, fill, stroke;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
+    transition-duration: 200ms;
+}
+
+/* Hardware acceleration for transform and opacity */
+.hw-accelerate {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 /* Focus styles for accessibility */
